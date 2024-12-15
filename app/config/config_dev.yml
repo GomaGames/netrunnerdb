@@ -5,10 +5,11 @@ framework:
     router:
         resource: '%kernel.project_dir%/app/config/routing_dev.yml'
         strict_requirements: true
-    profiler: { only_exceptions: false }
+    profiler:
+        enabled: false
 
 web_profiler:
-    toolbar: true
+    toolbar: false
     intercept_redirects: false
 
 monolog:
@@ -39,3 +40,4 @@ monolog:
 
 #swiftmailer:
 #    delivery_addresses: ['me@example.com']
+
