@@ -1,0 +1,15 @@
+[Unit]
+Description=FNF Gsheets Updater
+After=network.target
+
+[Service]
+Type=simple
+User=linuxuser
+WorkingDirectory=/home/linuxuser/nrdb
+Environment="ENDPOINT=/updater"
+Environment="TOKEN=SECRET_VALUE"
+ExecStart=/usr/bin/python3 updater.py /home/linuxuser/nrdb/netrunner-cards-json/pack/fnf.json
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target

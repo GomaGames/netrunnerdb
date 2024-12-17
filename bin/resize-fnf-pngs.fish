@@ -20,7 +20,7 @@ end
 for file in (ls web/images/png/fnf-full)
   set name (string split -m1 -r '.' $file)[1]
     convert web/images/png/fnf-full/$file web/images/cards/full/$name.jpg
-    convert -resize 372x519 web/images/png/fnf-full/$file web/images/cards/large/$name.jpg
+    convert -resize 300x419 web/images/png/fnf-full/$file web/images/cards/large/$name.jpg
     convert -resize 165x230 web/images/png/fnf-full/$file web/images/cards/medium/$name.jpg
     convert -resize 116x162 web/images/png/fnf-full/$file web/images/cards/small/$name.jpg
 end

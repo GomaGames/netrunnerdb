@@ -62,3 +62,13 @@ If you want to show site updates on the home page, copy `web/update_log.example.
 
 - update the json data
 - run `php bin/console app:import:json path_to_json_repository`
+
+## Updating Images
+
+For Fire and Fealty
+
+```sh
+fish bin/resize-fnf-pngs.fish
+
+rsync -a web/images/cards/ REMOTE_HOST:/var/www/html/nrdb/web/images/cards/
+```
