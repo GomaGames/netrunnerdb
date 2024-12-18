@@ -32,8 +32,8 @@ class RequestHandler(BaseHTTPRequestHandler):
 
         csv_reader = csv.DictReader(post_data.splitlines())
         for row in csv_reader:
-            # omit empty -------------------------------v
-            out.append({k: v for k, v in row.items() if v})
+            # parse subtypes json ----------v        omit empty -------------------------------v
+            out.append({k: json.loads(v) if k == "subtypes" else v for k, v in row.items() if v})
 
         out.sort(key=lambda k : k['code'])
 
